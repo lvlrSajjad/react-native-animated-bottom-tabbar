@@ -1,0 +1,35 @@
+{
+  "author": {
+    "name": "Sajjad Asadi",
+    "email": "lvlr.xaus@gmail.com"
+  },
+  "homepage": "https://github.com/lvlrSajjad/react-native-animated-bottom-tabbar",
+  "keywords": [
+    "react-native",
+    "react-native-animated-bottom-tabbar",
+    "tabbar",
+    "tab-bar",
+    "react-native-tabbar",
+    "react-native-tab-bar",
+    "react-native-animated",
+	"react-native-bottom"
+	],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "lvlrsajjad",
+      "email": "lvlr.xaus@gmail.com"
+    }
+  ],
+  "name": "react-native-animated-bottom-tabbar",
+  "peerDependencies": {
+    "react-native": "^0.41.2",
+    "react-native-windows": "0.41.0-rc.1"
+  },
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
