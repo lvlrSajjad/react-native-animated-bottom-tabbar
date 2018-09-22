@@ -5,7 +5,9 @@
 ## Getting started
 
 `$ npm install react-native-animated-bottom-tabbar --save`
+
 `$ npm install react-native-svg --save`
+
 `$ react-native link react-native-svg`
 
 ## Usage
