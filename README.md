@@ -1,6 +1,13 @@
 
 # react-native-animated-bottom-tabbar [![npm version](https://img.shields.io/npm/v/react-native-animated-bottom-tabbar.svg)](https://www.npmjs.com/package/react-native-animated-bottom-tabbar)
+
+typeOne:
+
 <img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/videoshot.gif">
+
+typeTwo:
+
+<img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/typetwo.gif">
 
 ## Getting started
 
@@ -14,7 +21,7 @@
 ```javascript
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
-import AwesomeTabbar from "react-native-animated-bottom-tabbar"; //<-----------------import
+import {TypeOne,TypeTwo} from "react-native-animated-bottom-tabbar"; //<-----------------import
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -51,7 +58,7 @@ export default class App extends Component<Props> {
                 <Text style={styles.instructions}>To get started, edit App.js</Text>
                 <Text style={styles.instructions}>{instructions}</Text>
                 {/* here*/}
-                <AwesomeTabbar
+                <TypeTwo // you can use TypeOne Also With the same settings
                     icons={icons} //array of icon views this array can be image or vector icon
                     selectedColor={'#FF8F00'} //color of selected item in tab bar
                     backgroundColor={'#212121'} //background color of tab bar

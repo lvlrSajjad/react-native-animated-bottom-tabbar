@@ -7,13 +7,16 @@
   "keywords": [
     "react-native",
     "react-native-animated-bottom-tabbar",
+    "react-native-animated-bottom-bar",
+    "react-native-bottom-bar",
+    "react-native-bottombar",
     "tabbar",
     "tab-bar",
     "react-native-tabbar",
     "react-native-tab-bar",
     "react-native-animated",
-	"react-native-bottom"
-	],
+    "react-native-bottom"
+  ],
   "license": "MIT",
   "main": "index.js",
   "maintainers": [
@@ -23,6 +26,7 @@
     }
   ],
   "name": "react-native-animated-bottom-tabbar",
+  "optionalDependencies": {},
   "peerDependencies": {
     "react-native": "^0.41.2",
     "react-native-windows": "0.41.0-rc.1"
@@ -31,5 +35,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
