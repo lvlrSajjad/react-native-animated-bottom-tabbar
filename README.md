@@ -3,11 +3,11 @@
 
 typeOne:
 
-<img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/videoshot.gif">
+<img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/videoshot.gif"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type1-4.gif"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type1-3.gif"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type1-2.gif">
 
 typeTwo:
 
-<img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/typetwo.gif">
+<img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/typetwo.gif"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type2-4.gif"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type2-3.gif"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type2-2.gif">
 
 ## Getting started
 
@@ -31,22 +31,23 @@ const instructions = Platform.select({
 });
 
 //array of icon views this array can be image or vector icon for tab  bar
+// array size can be 1 to maximum 5 !
 const icons = [
     <Image
         source={require('./menu.png')}
         style={{width: 32, height: 32}}/>,
     <Image
-        source={require('./magnify.png')}
+      source={require('./magnify.png')}
         style={{width: 32, height: 32}}/>,
     <Image
-        source={require('./message.png')}
+       source={require('./message.png')}
         style={{width: 32, height: 32}}/>,
     <Image
         source={require('./volume-low.png')}
         style={{width: 32, height: 32}}/>,
     <Image
-        source={require('./map-marker.png')}
-        style={{width: 32, height: 32}}/>
+       source={require('./map-marker.png')}
+       style={{width: 32, height: 32}}/>
 ];
 type Props = {};
 export default class App extends Component<Props> {

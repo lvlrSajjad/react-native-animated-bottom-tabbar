@@ -16,16 +16,37 @@ let {width} = Dimensions.get('window');
 
 export {AwesomeTabbarTwo};
 
+function initialIndexDetector(length) {
+    if (length === 1) {
+        return 1;
+    } else if (length === 2) {
+        return 1;
+    } else if (length === 3) {
+        return 2;
+    } else if (length === 4) {
+        return 1;
+    } else if (length === 5) {
+        return 3;
+    }
+}
 
 export default class AwesomeTabbar extends Component {
     constructor(props) {
         super(props);
-        this.offsetX = new Animated.Value(0);
-        this.oneOffsetY = new Animated.Value(0);
-        this.twoOffsetY = new Animated.Value(0);
-        this.threeOffsetY = new Animated.Value(-10);
-        this.fourOffsetY = new Animated.Value(0);
-        this.fiveOffsetY = new Animated.Value(0);
+        let initialIndex = 3;
+        initialIndex = initialIndexDetector(props.icons.length);
+        let xValue =0;
+        if (props.icons.length === 2){
+            xValue = -((width/props.icons.length)/2);
+        } else if (props.icons.length === 4) {
+            xValue = -((width/props.icons.length)+(width/props.icons.length/2));
+        }
+        this.offsetX = new Animated.Value(xValue);
+        this.oneOffsetY = new Animated.Value(initialIndex === 1 ? -10:0);
+        this.twoOffsetY = new Animated.Value(initialIndex === 2 ? -10:0);
+        this.threeOffsetY = new Animated.Value(initialIndex === 3 ? -10:0);
+        this.fourOffsetY = new Animated.Value(initialIndex === 4 ? -10:0);
+        this.fiveOffsetY = new Animated.Value(initialIndex === 5 ? -10:0);
 
         moveSelected = moveSelected.bind(this);
         animateIcon = animateIcon.bind(this);
@@ -56,51 +77,66 @@ export default class AwesomeTabbar extends Component {
 
                 </Animated.View>
                 <View style={styles.tabBar}>
+                    {this.props.icons[0] &&
+
                     <TouchableOpacity onPress={() => {
                         this.props.onSelect(1);
                         moveSelected(1)
-                    }} style={{width: width / 5, height: 56, alignItems: 'center', justifyContent: 'center'}}>
+                    }} style={{width: width / this.props.icons.length, height: 56, alignItems: 'center', justifyContent: 'center'}}>
                         <Animated.View style={{transform: [{translateY: this.oneOffsetY}]}}>
                             {this.props.icons[0]}
                         </Animated.View>
                     </TouchableOpacity>
+                    }
+                    {this.props.icons[1] &&
+
                     <TouchableOpacity onPress={() => {
                         this.props.onSelect(2);
                         moveSelected(2)
-                    }} style={{width: width / 5, height: 56, alignItems: 'center', justifyContent: 'center'}}>
+                    }} style={{width: width / this.props.icons.length, height: 56, alignItems: 'center', justifyContent: 'center'}}>
                         <Animated.View style={{transform: [{translateY: this.twoOffsetY}]}}>
                             {this.props.icons[1]}
 
                         </Animated.View>
 
                     </TouchableOpacity>
+                    }
+                    {this.props.icons[2] &&
+
                     <TouchableOpacity onPress={() => {
                         this.props.onSelect(3);
                         moveSelected(3)
-                    }} style={{width: width / 5, height: 56, alignItems: 'center', justifyContent: 'center'}}>
+                    }} style={{width: width / this.props.icons.length, height: 56, alignItems: 'center', justifyContent: 'center'}}>
                         <Animated.View style={{transform: [{translateY: this.threeOffsetY}]}}>
                             {this.props.icons[2]}
                         </Animated.View>
 
                     </TouchableOpacity>
+                    }
+                    {this.props.icons[3] &&
+
                     <TouchableOpacity onPress={() => {
                         this.props.onSelect(4);
                         moveSelected(4)
-                    }} style={{width: width / 5, height: 56, alignItems: 'center', justifyContent: 'center'}}>
+                    }} style={{width: width / this.props.icons.length, height: 56, alignItems: 'center', justifyContent: 'center'}}>
                         <Animated.View style={{transform: [{translateY: this.fourOffsetY}]}}>
                             {this.props.icons[3]}
                         </Animated.View>
 
                     </TouchableOpacity>
+                    }
+                    {this.props.icons[4] &&
+
                     <TouchableOpacity onPress={() => {
                         this.props.onSelect(5);
                         moveSelected(5)
-                    }} style={{width: width / 5, height: 56, alignItems: 'center', justifyContent: 'center'}}>
+                    }} style={{width: width / this.props.icons.length, height: 56, alignItems: 'center', justifyContent: 'center'}}>
                         <Animated.View style={{transform: [{translateY: this.fiveOffsetY}]}}>
                             {this.props.icons[4]}
                         </Animated.View>
 
                     </TouchableOpacity>
+                    }
                 </View>
 
 
@@ -183,31 +219,9 @@ const styles = StyleSheet.create({
 });
 
 export function moveSelected(index) {
-    let value: 0;
+    let value = 0;
+    value = detectNewOffset(index, this.props.icons.length);
     animateIcon(-1);
-    switch (index) {
-        case 1: {
-            value = -2 * (width / 5);
-            break;
-        }
-        case 2: {
-            value = -(width / 5);
-            break;
-        }
-        case 3: {
-            value = 0;
-            break;
-        }
-        case 4: {
-            value = (width / 5);
-            break;
-        }
-        case 5: {
-            value = 2 * (width / 5);
-            break;
-        }
-    }
-
     Animated.parallel([
         Animated.timing(
             this.offsetX,
@@ -220,34 +234,75 @@ export function moveSelected(index) {
 
 }
 
+function detectNewOffset(index, length)
+{
+    if (length === 1) {
+        return 0;
+    } else {
+        let value = 0;
+        console.log(index);
+        switch (index) {
+            case 1: {
+                if (length === 5) {
+                    value = -2 * (width / length);
+                }
+                else if (length === 2) {
+                    value = -((width/length)/2);
+                }else if (length ===4){
+                    value = -((width/length)+(width/length/2));
+                }
+                else if (length === 3) {
+                    value = -(width / length);
+                }
+                break;
+            }
+            case 2: {
+                if (length === 5) {
+                    value = -(width / length);
+                } else if (length === 2 ) {
+                    value = (width / length)-((width / length)/2);
+                } else if (length === 4){
+                    value = -((width/length)+(width/length/2))+(width/length);
+                }  else if (length === 3) {
+                    value = 0;
+                }
+                break;
+            }
+            case 3: {
+                if (length === 5) {
+                    value = 0;
+                } else if (length === 4) {
+                    value = -((width/length)+(width/length/2))+(2*(width/length));
+                } else if (length === 3) {
+                    value = (width / length);
+                }
+                break;
+            }
+            case 4: {
+                if (length === 5) {
+                    value = (width / length);
+                } else if (length === 4) {
+                    value = -((width/length)+(width/length/2))+(3*(width/length));
+                }
+                break;
+            }
+            case 5: {
+                if (length === 5) {
+                    value = 2 * (width / length);
+                }
+                break;
+            }
+        }
+        return value;
+    }
+}
+
 export function animateIcon(index) {
-    let value1: 0;
-    let value2: 0;
-    let value3: 0;
-    let value4: 0;
-    let value5: 0;
-
-    if (index === 1) {
-        value1 = -10;
-    }
-    else if (index === 2) {
-        value2 = -10;
-    }
-    else if (index === 3) {
-        value3 = -10;
-    }
-    else if (index === 4) {
-        value4 = -10;
-    }
-    else if (index === 5) {
-        value5 = -10;
-    }
-
     Animated.parallel([
         Animated.timing(
             this.oneOffsetY,
             {
-                toValue: value1,
+                toValue: index === 1 ? -10 : 0,
                 duration: 100,
                 useNativeDriver: true
             }
@@ -255,7 +310,7 @@ export function animateIcon(index) {
         Animated.timing(
             this.twoOffsetY,
             {
-                toValue: value2,
+                toValue: index === 2 ? -10 : 0,
                 duration: 100,
                 useNativeDriver: true
             }
@@ -263,7 +318,7 @@ export function animateIcon(index) {
         Animated.timing(
             this.threeOffsetY,
             {
-                toValue: value3,
+                toValue: index === 3 ? -10 : 0,
                 duration: 100,
                 useNativeDriver: true
             }
@@ -271,7 +326,7 @@ export function animateIcon(index) {
         Animated.timing(
             this.fourOffsetY,
             {
-                toValue: value4,
+                toValue: index === 4 ? -10 : 0,
                 duration: 100,
                 useNativeDriver: true
             }
@@ -279,7 +334,7 @@ export function animateIcon(index) {
         Animated.timing(
             this.fiveOffsetY,
             {
-                toValue: value5,
+                toValue: index === 5 ? -10 : 0,
                 duration: 100,
                 useNativeDriver: true
             }
