@@ -3,11 +3,11 @@
 
 typeOne:
 
-<img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/videoshot.gif" width="200"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type1-4.gif" width="200"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type1-3.gif" width="200"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type1-2.gif" width="200">
+<img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/videoshot.gif" width="200"> <img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type1-4.gif" width="200"> <img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type1-3.gif" width="200"> <img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type1-2.gif" width="200">
 
 typeTwo:
 
-<img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/typetwo.gif" width="200"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type2-4.gif" width="200"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type2-3.gif" width="200"><img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type2-2.gif" width="200">
+<img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/typetwo.gif" width="200"> <img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type2-4.gif" width="200"> <img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type2-3.gif" width="200"> <img src="https://raw.githubusercontent.com/lvlrSajjad/react-native-animated-bottom-tabbar/master/type2-2.gif" width="200">
 
 ## Getting started
 
